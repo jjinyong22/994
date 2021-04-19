@@ -28,5 +28,16 @@ public class IntroDAOImpl implements IntroDAO {
 	public Integer Intromaxnum() {
 		return sqlSession.selectOne("boardMapper.intromaxnum");
 	}
+
+	@Override
+	public IntroVO introread(int intnum) throws Exception {
+		
+		return sqlSession.selectOne("boardMapper.introread",intnum);
+	}
+
+	@Override
+	public void introupdate(IntroVO introvo) {
+		sqlSession.update("boardMapper.introupdate",introvo);
+	}
 	
 }

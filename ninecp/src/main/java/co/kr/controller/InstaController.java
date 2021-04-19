@@ -75,12 +75,11 @@ public class InstaController {
 	}
 	
 	@RequestMapping(value="instadetail" ,method = RequestMethod.GET)
-	public String read(InstaVO instaVO,Model model) throws Exception {
-		model.addAttribute("insta_bno",instaVO.getInsta_bno());	
+	public String read(InstaVO instaVO,Model model
+						) throws Exception {
 		model.addAttribute("read",instaService.read(instaVO.getInsta_bno()));
-			
-			List<Insta_replyVO> replyList = replyService.readReply(instaVO.getInsta_bno());
-			model.addAttribute("replyList",replyList);
+		List<Insta_replyVO> replyList = replyService.readReply(instaVO.getInsta_bno());
+		model.addAttribute("replyList",replyList);
 			
 			
 			return "jsp/instadetail";

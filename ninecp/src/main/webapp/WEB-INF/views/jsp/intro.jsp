@@ -112,7 +112,6 @@ figure.snip1432.hover figcaption h3:nth-of-type(2) {
 	
 			<div style="width:25%; height:90%; float:left;">
 					<figure class="snip1432">
-					
 					<img hspace="3"src="resources/img/${introlist.intimg }" width=100%; height=100%;>
 					<figcaption>
 			    <div style="height:50%;">
@@ -129,12 +128,16 @@ figure.snip1432.hover figcaption h3:nth-of-type(2) {
 					   	<input type="hidden" value="${introlist.intimg }" name="profile">
 						<input type="password" name="loginpass" Placeholder="비밀번호를 입력해주세요">
 					</form>
+					<br>
 					</h3>
-					
 			    </div>
 			  		</figcaption>
 					</figure>
-			</div>
+			<a style = "cursor: pointer;"  
+			onclick= "window.open('introupdate?intnum=${introlist.intnum }',
+			'멤버 수정', 'width=800, height=600').focus();">멤버 수정</a></div>
+			
+			
 			
 				</c:forEach>
 

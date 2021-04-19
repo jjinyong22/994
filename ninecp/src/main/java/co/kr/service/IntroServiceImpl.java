@@ -29,5 +29,15 @@ public class IntroServiceImpl implements IntroService{
 	public Integer Intromaxnum() {
 		return dao.Intromaxnum();
 	}
+
+	@Override
+	public IntroVO introread(int intnum) throws Exception {
+		return dao.introread(intnum);
+	}
+
+	@Override
+	public void introupdate(IntroVO introvo) {
+		dao.introupdate(introvo);
+	}
 	
 }

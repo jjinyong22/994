@@ -149,7 +149,7 @@ figure.snip1432.hover figcaption h3:nth-of-type(2) {
 					<h3></h3>	
 					<h3>
 					${instalist.insta_love }<br/><br/><br/><br/><br/><br/>
-					<a href="/instadetail?insta_bno=${instalist.insta_bno }">
+<%-- 					<a href="/instadetail?insta_bno=${instalist.insta_bno }"> --%>
 				    </a>
 				    </h3>
 				    </div>

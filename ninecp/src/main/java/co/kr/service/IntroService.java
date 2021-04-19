@@ -12,4 +12,8 @@ public interface IntroService {
 	public void Introadd(IntroVO introVO);
 	
 	public Integer Intromaxnum();
+	
+	public IntroVO introread(int intnum)throws Exception;
+	
+	public void introupdate(IntroVO introvo);
 }

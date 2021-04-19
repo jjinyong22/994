@@ -5,12 +5,12 @@ public class IntroVO {
 	private String intint;
 	private String intimg;
 	private String intpass;
-	private int intnum;
+	private Integer intnum;
 	
-	public int getIntnum() {
+	public Integer getIntnum() {
 		return intnum;
 	}
-	public void setIntnum(int intnum) {
+	public void setIntnum(Integer intnum) {
 		this.intnum = intnum;
 	}
 	public String getIntpass() {

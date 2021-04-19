@@ -103,4 +103,66 @@ public class IntroController {
 		return "jsp/intro";	
 	}
 	
+	
+	@RequestMapping(value="/introupdate", method= RequestMethod.GET)
+	public String introupdate(Model model,IntroVO introvo) throws Exception {
+		
+		model.addAttribute("introup",introservice.introread(introvo.getIntnum()));
+		
+		
+		return "jsp/introupdate";
+	}
+	
+	@RequestMapping(value="/introupdate", method= RequestMethod.POST)
+	public String introupdate2(MultipartHttpServletRequest request,HttpSession session,
+			@RequestParam("intnum")Integer num,
+			@RequestParam("intname")String name,
+			@RequestParam("intint")String intro,
+			@RequestParam("intimg")MultipartFile img,
+			@RequestParam("intpass")String pass
+			)throws Exception {
+		
+		IntroVO introvo = new IntroVO();
+		
+		
+		MultipartFile multiFile = img;
+		String fileName = null;
+		String path=null;
+		OutputStream out = null;
+		if(multiFile != null) {
+			fileName = multiFile.getOriginalFilename();
+			path = request.getSession().getServletContext()
+					.getRealPath("resources/img/"+fileName);
+			System.out.println("업로드경로:"+path);
+			File file = new File(path);//업로드될 파일이 생성
+			try {
+				out = new FileOutputStream(file);
+				BufferedInputStream bis =
+					new BufferedInputStream(
+						multiFile.getInputStream());
+				byte[] buffer = new byte[8106];//8K 크기
+				int read = 0;
+				while((read = bis.read(buffer) ) > 0) {
+					out.write(buffer,0,read);
+				}//파일로 출력
+				if(out != null) out.close();//사용한 객체를 닫음
+				if(bis != null) bis.close();//사용한 객체를 닫음
+			}catch(Exception e) {
+			}
+		}
+		introvo.setIntnum(num);
+		introvo.setIntname(name);
+		introvo.setIntint(intro);
+		introvo.setIntimg(fileName);
+		introvo.setIntpass(pass);
+		introservice.introupdate(introvo);
+		
+		
+		
+		return "redirect:/intro";
+	}
+	
+	
+	
+	
 }

@@ -34,6 +34,16 @@
    		select * from nine_insta order by insta_bno desc
    </select>
 
+	<update id="introupdate" parameterType="co.kr.vo.IntroVO">
+		update nine_intro set intname = #{intname}, intint = #{intint},
+		 intimg = #{intimg}, intpass = #{intpass}
+			where intnum = #{intnum}
+	</update>
+
+	<select id="introread" parameterType="int" resultType="co.kr.vo.IntroVO">
+		select * from nine_intro where intnum = #{intnum}
+	</select>
+
 	<select id="instaread" parameterType="int" resultType="co.kr.vo.InstaVO">
 		select * from nine_insta where insta_bno = #{insta_bno}
 	</select>	
