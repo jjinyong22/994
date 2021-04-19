@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+
+   <delete id="deleteReply" parameterType="co.kr.vo.Insta_replyVO">
+   		delete from insta_reply where rno=#{rno}
+   </delete>
+   
+   <delete id="deleteReply2" parameterType="co.kr.vo.Insta_replyVO">
+   		delete from insta_reply where bno=#{bno}
+   </delete>
+   
+   <insert id="writeReply">
+   		insert into insta_reply	(bno, rno, content, writer, reply_img)
+   				values(#{bno}, insta_reply_seq.nextval, #{content}, #{writer},#{reply_img})
+   </insert>
+   
+   <select id="readReply" resultType="co.kr.vo.Insta_replyVO">
+   		select rno, content, writer, regdate, reply_img
+   			from insta_reply where bno=#{bno} order by rno desc
+  </select>
+   
+   <delete id="deleteInsta" parameterType="co.kr.vo.InstaVO">
+   		delete from nine_insta where insta_bno=#{insta_bno}
+   </delete>
+   
+   <select id="introlist" resultType="co.kr.vo.IntroVO">
+   select * from nine_intro order by intnum asc
+   </select>
+
+   <select id="instalist" resultType="co.kr.vo.InstaVO">
+   		select * from nine_insta order by insta_bno desc
+   </select>
+
+	<select id="instaread" parameterType="int" resultType="co.kr.vo.InstaVO">
+		select * from nine_insta where insta_bno = #{insta_bno}
+	</select>	
+   
+   <insert id="introadd" parameterType="co.kr.vo.IntroVO">
+   		insert into nine_intro values(#{intname}, #{intint}, #{intimg}, #{intpass}, #{intnum})
+   		
+   </insert>
+   
+   <insert id="instaadd" parameterType="co.kr.vo.InstaVO">
+   		insert into nine_insta values(#{insta_bno}, #{insta_int},
+   		 #{insta_image}, #{insta_love}, #{insta_name}, #{insta_profile} )
+   </insert>
+   
+   <insert id="insta_add_add" parameterType="co.kr.vo.Insta_addVO">
+   		insert into nine_insta_add values(#{insta_add_code}, #{insta_add_image})
+   </insert>
+   
+   <select id = "intromaxnum" resultType="Integer">
+   		select max(intnum) from nine_intro
+   </select>
+   
+   <select id = "maxCode" resultType ="Integer">
+		select max(insta_bno) from nine_insta
+	</select>
+   
+   
+</mapper>
