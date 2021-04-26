@@ -2,7 +2,7 @@
 
 java 14.0.1  sts4.6.1  DB는 sql을 사용하였습니다.
 
-![KakaoTalk_20210420_171412200_06](https://user-images.githubusercontent.com/53454987/115361932-04d79580-a1fc-11eb-96fb-a376e134b17f.png 기본 소개화면입니다
+![KakaoTalk_20210420_171412200_06](https://user-images.githubusercontent.com/53454987/115361932-04d79580-a1fc-11eb-96fb-a376e134b17f.png) 기본 소개화면입니다
 
 ![KakaoTalk_20210420_171412200](https://user-images.githubusercontent.com/53454987/115361967-0e60fd80-a1fc-11eb-8ae2-e38d25deb2d5.png) 로그인 화면입니다
 
