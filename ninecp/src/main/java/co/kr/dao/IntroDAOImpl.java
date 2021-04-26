@@ -39,5 +39,10 @@ public class IntroDAOImpl implements IntroDAO {
 	public void introupdate(IntroVO introvo) {
 		sqlSession.update("boardMapper.introupdate",introvo);
 	}
+
+	@Override
+	public void introdelete(int intnum) throws Exception {
+		sqlSession.delete("boardMapper.introdelete",intnum);
+	}
 	
 }

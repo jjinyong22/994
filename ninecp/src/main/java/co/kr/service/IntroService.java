@@ -16,4 +16,6 @@ public interface IntroService {
 	public IntroVO introread(int intnum)throws Exception;
 	
 	public void introupdate(IntroVO introvo);
+	
+	public void introdelete(int intnum) throws Exception;
 }

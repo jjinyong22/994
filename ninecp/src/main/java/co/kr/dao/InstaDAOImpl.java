@@ -38,7 +38,6 @@ public class InstaDAOImpl implements InstaDAO {
 
 	@Override
 	public List<InstaVO> instalist() throws Exception {
-		
 		return session.selectList("boardMapper.instalist");
 	}
 

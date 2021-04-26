@@ -110,7 +110,7 @@ figure.snip1432.hover figcaption h3:nth-of-type(2) {
 			
 				<c:forEach items="${introlist}" var="introlist">
 	
-			<div style="width:25%; height:90%; float:left;">
+			<div style="width:25%; height:50%; float:left;">
 					<figure class="snip1432">
 					<img hspace="3"src="resources/img/${introlist.intimg }" width=100%; height=100%;>
 					<figcaption>
@@ -118,9 +118,7 @@ figure.snip1432.hover figcaption h3:nth-of-type(2) {
 			    
 					<h3></h3>	
 			      	<h3>${introlist.intname }
-			      	
-			      	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-					
+			      	<br/><br/>
 					${introlist.intint }<br/>
 						<form action="login" method="post" name="loginform" onsubmit="loginCheck()">
 						<input type="hidden" value="${introlist.intpass }" name="intpass">
@@ -133,12 +131,19 @@ figure.snip1432.hover figcaption h3:nth-of-type(2) {
 			    </div>
 			  		</figcaption>
 					</figure>
-			<a style = "cursor: pointer;"  
+					
+					<c:choose> 
+					<c:when test="${name == '지녕이' }">
+					<div>
+					<a style = "cursor: pointer;"  
 			onclick= "window.open('introupdate?intnum=${introlist.intnum }',
-			'멤버 수정', 'width=800, height=600').focus();">멤버 수정</a></div>
-			
-			
-			
+			'멤버 수정', 'width=800, height=600').focus();">멤버 수정</a>
+					</div>
+					
+					
+					</c:when>
+					</c:choose>
+					</div>
 				</c:forEach>
 
 </body>

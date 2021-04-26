@@ -17,4 +17,6 @@ public interface IntroDAO {
 	
 	public void introupdate(IntroVO introvo);
 	
+	public void introdelete(int intnum) throws Exception;
+	
 }

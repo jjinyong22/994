@@ -39,5 +39,10 @@ public class IntroServiceImpl implements IntroService{
 	public void introupdate(IntroVO introvo) {
 		dao.introupdate(introvo);
 	}
+
+	@Override
+	public void introdelete(int intnum) throws Exception {
+		dao.introdelete(intnum);
+	}
 	
 }

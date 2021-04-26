@@ -62,6 +62,22 @@
 			false;
 		}
 	}
+
+		function introdelete(){
+
+		if(confirm('정말로 삭제하시겠습니까?')){
+
+			opener.document.location.href = "introdelete?intnum=${introup.intnum }";
+			self.close();
+
+			
+			}
+
+		else{ return false;}
+			
+
+			}
+
 	
 </script>
 </head>
@@ -141,6 +157,11 @@
 						<br><br><br>
 					</div>
 					
+					
+					
+					
+<%-- 					<a href="introdelete?intnum=${introup.intnum }">멤버 삭제</a> --%>
+					<a href="javascript:introdelete()">멤버삭제</a>
 					<div class="jinstarright2">
 					</div>
 				</div>

@@ -38,7 +38,6 @@ public class InstaServiceImpl implements InstaService {
 
 	@Override
 	public List<InstaVO> instalist() throws Exception {
-		
 		return instaDAO.instalist();
 	}
 

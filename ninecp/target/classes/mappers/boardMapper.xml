@@ -4,11 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="boardMapper">
 
-   <delete id="deleteReply" parameterType="co.kr.vo.Insta_replyVO">
+	<delete id="introdelete">
+		delete from nine_intro where intnum = #{intnum}
+	</delete>
+
+   <delete id="deleteReply">
    		delete from insta_reply where rno=#{rno}
    </delete>
    
-   <delete id="deleteReply2" parameterType="co.kr.vo.Insta_replyVO">
+   <delete id="deleteReply2">
    		delete from insta_reply where bno=#{bno}
    </delete>
    
@@ -22,7 +26,7 @@
    			from insta_reply where bno=#{bno} order by rno desc
   </select>
    
-   <delete id="deleteInsta" parameterType="co.kr.vo.InstaVO">
+   <delete id="deleteInsta">
    		delete from nine_insta where insta_bno=#{insta_bno}
    </delete>
    
@@ -34,31 +38,31 @@
    		select * from nine_insta order by insta_bno desc
    </select>
 
-	<update id="introupdate" parameterType="co.kr.vo.IntroVO">
+	<update id="introupdate">
 		update nine_intro set intname = #{intname}, intint = #{intint},
 		 intimg = #{intimg}, intpass = #{intpass}
 			where intnum = #{intnum}
 	</update>
 
-	<select id="introread" parameterType="int" resultType="co.kr.vo.IntroVO">
+	<select id="introread" resultType="co.kr.vo.IntroVO">
 		select * from nine_intro where intnum = #{intnum}
 	</select>
 
-	<select id="instaread" parameterType="int" resultType="co.kr.vo.InstaVO">
+	<select id="instaread" resultType="co.kr.vo.InstaVO">
 		select * from nine_insta where insta_bno = #{insta_bno}
 	</select>	
    
-   <insert id="introadd" parameterType="co.kr.vo.IntroVO">
+   <insert id="introadd" >
    		insert into nine_intro values(#{intname}, #{intint}, #{intimg}, #{intpass}, #{intnum})
    		
    </insert>
    
-   <insert id="instaadd" parameterType="co.kr.vo.InstaVO">
+   <insert id="instaadd">
    		insert into nine_insta values(#{insta_bno}, #{insta_int},
    		 #{insta_image}, #{insta_love}, #{insta_name}, #{insta_profile} )
    </insert>
    
-   <insert id="insta_add_add" parameterType="co.kr.vo.Insta_addVO">
+   <insert id="insta_add_add" >
    		insert into nine_insta_add values(#{insta_add_code}, #{insta_add_image})
    </insert>
    

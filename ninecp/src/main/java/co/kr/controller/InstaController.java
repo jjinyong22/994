@@ -88,9 +88,7 @@ public class InstaController {
 	@RequestMapping(value="/insta", method = RequestMethod.GET)
 	public String instalist(Model model) throws Exception {
 		
-		
 		model.addAttribute("instalist",instaService.instalist());
-		
 		return "jsp/insta";
 	}
 

@@ -104,6 +104,14 @@ public class IntroController {
 	}
 	
 	
+	@RequestMapping(value="introdelete", method= RequestMethod.GET)
+	public String introdelete(IntroVO introvo)throws Exception {
+		
+		introservice.introdelete(introvo.getIntnum());
+		
+		return "redirect:/intro";
+	}
+	
 	@RequestMapping(value="/introupdate", method= RequestMethod.GET)
 	public String introupdate(Model model,IntroVO introvo) throws Exception {
 		
